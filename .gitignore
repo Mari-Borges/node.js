@@ -1,6 +1,6 @@
-api/  
-app.js
-node_modules/
-package-lock.json
-package.json
-server.js
+.api/  
+.app.js
+.node_modules/
+.package-lock.json
+.package.json
+.server.js
