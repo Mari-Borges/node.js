@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 
 const produtoRoutes = require('./api/routes/produtos');
 
-mongoose.connect('mongodb+srv://Mari-borges:vemvl0312@unidesc-pwi-mari-qsirl.mongodb.net/test?retryWrites=true&w=majority',{
+mongoose.connect('mongodb+srv://Mari-Borges:vemvl0312@unidesc-pwi-mari-j8sjy.mongodb.net/test?retryWrites=true&w=majority',{
       useNewUrlParser: true,
       useUnifiedTopology: true
 });

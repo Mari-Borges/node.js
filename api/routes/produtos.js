@@ -10,33 +10,33 @@ router.get('/', (req, res, next) =>{
 });
 
 router.post('/', (req, res, next) =>{
-
+    
     const produto = new Produto({
-            _id: new mongoose.Types.ObjetId(),
+            _id: new mongoose.Types.ObjectId(),
             nome: req.body.nome,
             preco: req.body.preco
     });
     produto.save()
     .then(result => {
          res.status(201).json({
-             messagem: 'POST request par a /produto',
+             message: 'POST Request para /produto',
              produtoCriado: produto
       });
     })
-    .cotch(err =>{
-    res.status(500).json({
-        erro: err
+    .catch(err => {
+         res.status(500).json ({
+         error: err
         });
     });
  router.get('/:produtoId', (req, res, next) =>{
-    const id = req.params.produtosId;
+    const id = req.params.produtoId;
     Produto.findById(id)
     .exec()
     .then(doc => {
            res.status(200).json(doc);
 
     })
-    .catch(err=>{
+    .catch(err=> {
         res.status(500).json({error:err});
     })
 });
