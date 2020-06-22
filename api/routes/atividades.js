@@ -1,26 +1,26 @@
 const express = require('express');
 const router = express.Router();
-const Produto = require('../models/produtos');
+const Atividade = require('../models/atividades');
 const mongoose = require('mongoose');
 
 router.get('/', (req, res, next) =>{
     res.status(200).json({
-        message: 'GET Request para /produtos'
+        message: 'GET Request para /atividade'
     });
 });
 
 router.post('/', (req, res, next) =>{
     
-    const produto = new Produto({
-            _id: new mongoose.Types.ObjectId(),
+    const atividade = new Atividade({
+            _id: new mongoose.Types.AtvidadId(),
             nome: req.body.nome,
-            preco: req.body.preco
+            descrição: req.body.desc
     });
-    produto.save()
+    atividade.save()
     .then(result => {
          res.status(201).json({
-             message: 'POST Request para /produto',
-             produtoCriado: produto
+             message: 'POST Request para /atividade',
+             atividadeCriada: atividade
       });
     })
     .catch(err => {
@@ -28,9 +28,9 @@ router.post('/', (req, res, next) =>{
          error: err
         });
     });
- router.get('/:produtoId', (req, res, next) =>{
-    const id = req.params.produtoId;
-    Produto.findById(id)
+ router.get('/:atvidadId', (req, res, next) =>{
+    const id = req.params.atividadId;
+    Atividade.findById(id)
     .exec()
     .then(doc => {
            res.status(200).json(doc);

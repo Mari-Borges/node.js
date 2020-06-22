@@ -28,7 +28,7 @@ app.use((req, res, next)=>{
     next();
 });
 
-app.use('/produtos', produtoRoutes);
+app.use('/atividades', atividadeRoutes);
 
 app.use((req, res, next)=>{
     const error = new Error('not found');
